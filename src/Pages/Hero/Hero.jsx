@@ -21,7 +21,6 @@ export const Hero = () => {
         </div>
         <div className='hero-image'>
             <img src={heroPlate} alt="Hero Plate" />
-            <img src="" alt="second plate" />
         </div>
     </section>
     <section className="categories container">
@@ -69,6 +68,7 @@ export const Hero = () => {
         <img src={sectionImage} alt="meal"/>
       </div>
     </section>
+
     </>
   )
 }

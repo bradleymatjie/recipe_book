@@ -3,7 +3,6 @@ import './App.css'
 import { Header } from './Components/Header/Header';
 import { MobileMenu } from './Components/MobileMenu/MobileMenu';
 import { Hero } from './Pages/Hero/Hero';
-import { Category } from './Pages/Categories/Category';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
