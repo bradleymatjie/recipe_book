@@ -3,8 +3,8 @@ import './Header.scss';
 export const Header = ({ menuTogglerFunction, menuTogglerValue }) => {
  return (
   <header className='header'>
-    <div>
-      logo
+    <div className='logo'>
+      <h2>CookPedia</h2>
     </div>
 
     <nav>

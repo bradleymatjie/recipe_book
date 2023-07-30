@@ -1,0 +1,51 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 100px;
+
+    @media (min-width: 800px) {
+        flex-direction: row;
+        padding: 0 20px;
+    }
+}
+
+// div with texts
+.hero-texts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    
+    @media (min-width: 800px) {
+        align-items: flex-start;
+    }
+}
+
+.hero-texts h1{
+    font-size: 2em;
+    width: 80%;
+    text-align: center;
+
+    
+    @media (min-width: 800px) {
+        text-align: left;
+        font-size: 3em;
+    }
+}
+
+
+.hero-texts p {
+    font-size: 1em;
+    width: 80%;
+    text-align: center;
+    margin-top: 0;
+}
+
+.hero img {
+    width: 250px;
+    height: 250px;
+    border-radius: 300px;
+}
