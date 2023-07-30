@@ -5,6 +5,7 @@
     align-items: center;
     gap: 20px;
     padding-top: 100px;
+    position: relative;
 
     @media (min-width: 800px) {
         flex-direction: row;
@@ -32,20 +33,44 @@
     
     @media (min-width: 800px) {
         text-align: left;
-        font-size: 3em;
+        font-size: 3.5em;
     }
 }
-
 
 .hero-texts p {
     font-size: 1em;
     width: 80%;
     text-align: center;
     margin-top: 0;
+
+    @media (min-width: 800px) {
+        text-align: left;
+    }
+}
+
+
+.hero-image {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgb(39, 94, 56);
+    width: 50%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 1px 1px 10px 1px lightgreen;
+    border-radius: 20px;
 }
 
 .hero img {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
     border-radius: 300px;
+    box-shadow: 1px 1px 5px 1px black;
+    
+    @media (min-width: 800px) {
+        width: 400px;
+        height: 400px;
+    }
 }

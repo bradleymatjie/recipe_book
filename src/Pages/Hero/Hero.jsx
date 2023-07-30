@@ -12,12 +12,9 @@ export const Hero = () => {
         </div>
         <div className='hero-image'>
             <img src={heroPlate} alt="Hero Plate" />
-            <img src="" alt="second plate" />
         </div>
     </section>
-    <section className="categories">
-      categories
-    </section>
+
     </>
   )
 }

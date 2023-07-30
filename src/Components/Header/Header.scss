@@ -1,9 +1,10 @@
 .header {
+  background-color: #2d593d;;
   height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: black;
+
   position: fixed;
   left: 0;
   right: 0;
@@ -33,7 +34,8 @@
     // header-navItems li
     & li {
       cursor: pointer;
-      font-family: 'Lato-regular';
+      padding-bottom: 4px;
+      color: #f2f2f2;
       
       // header-navItems li::after
       &::after {
@@ -43,7 +45,7 @@
         top: 4px;
         width: 0;
         height: 3px;
-        background: #000;
+        background: #f2f2f2;
         border-radius: 20px;
         transition: width .5s;
       }
@@ -58,7 +60,7 @@
 
 // Active nav link
 .active {
-  border-bottom: 4px solid #252525;
+  border-bottom: 4px solid #f2f2f2;
   border-radius: 3px;
   padding-bottom: 4px;
 }
@@ -135,4 +137,10 @@
 
 .logo h2 {
   color: #c8ead1;
+}
+
+li > a {
+  text-decoration: none;
+  color: #f2f2f2;
+  
 }

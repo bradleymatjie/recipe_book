@@ -1,4 +1,5 @@
 import './Header.scss';
+import { NavLink } from 'react-router-dom';
 
 export const Header = ({ menuTogglerFunction, menuTogglerValue }) => {
  return (
@@ -9,9 +10,9 @@ export const Header = ({ menuTogglerFunction, menuTogglerValue }) => {
 
     <nav>
       <ul className='header-navItems'>
-        <li>Home</li>
-        <li>Recipe</li>
-        <li>About</li>
+        <li><NavLink to="/recipe_book/">Home</NavLink></li>
+        <li><NavLink to="/recipe_book/recipes">Recipe</NavLink></li>
+        <li><NavLink to="/recipe_book/about">About</NavLink></li>
       </ul>
     </nav>
 
