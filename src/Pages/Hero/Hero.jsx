@@ -3,6 +3,7 @@ import heroPlate from '../../assets/hero-plate.jpg';
 
 export const Hero = () => {
   return (
+    <>
     <section className='hero'>
         <div className='hero-texts'>
             <h1>The Easiest way to make your favourite meal</h1>
@@ -11,7 +12,12 @@ export const Hero = () => {
         </div>
         <div className='hero-image'>
             <img src={heroPlate} alt="Hero Plate" />
+            <img src="" alt="second plate" />
         </div>
     </section>
+    <section className="categories">
+      categories
+    </section>
+    </>
   )
 }
