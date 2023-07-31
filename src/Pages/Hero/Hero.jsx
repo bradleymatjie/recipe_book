@@ -6,7 +6,7 @@ import Meaty from '../../assets/meaty.jpg';
 import Pastry from '../../assets/pastry.jpg';
 import Seafood from '../../assets/seafood.jpg';
 import Vegan from '../../assets/vegan.jpg';
-import Cocktail from '../../assets/Cocktails.jpg';
+import Cocktail from '../../assets/cocktails.jpg';
 import sectionImage from '../../assets/pexels-ella-olsson-1640774.jpg';
 import { NavLink } from 'react-router-dom';
 import { Footer } from '../../Components/Footer/Footer';
