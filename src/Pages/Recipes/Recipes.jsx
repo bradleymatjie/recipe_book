@@ -9,6 +9,8 @@ export const Recipes = () => {
   const [selectedCategory, setSelectedCategory] = useState('All'); 
     const containerRef = useRef(null);
     const [selectedRecipe, setSelectedRecipe] = useState(null);
+    const [selectedRecipeIndex, setSelectedRecipeIndex] = useState(null); 
+
 
     
     const handleScrollRight = () => {
@@ -56,8 +58,9 @@ export const Recipes = () => {
     setSelectedCategory(category);
   };
 
-  const handleRecipeClick = (recipe) => {
+  const handleRecipeClick = (recipe, index) => {
     setSelectedRecipe(recipe);
+    setSelectedRecipeIndex(index); 
   };
 
   
@@ -131,16 +134,16 @@ export const Recipes = () => {
 
         <div className="recipesList">
             <div className='recipesList-container' ref={containerRef}>
-              {filteredRecipes.map(item => (
-                <div 
-                  className='recipe' 
-                  key={item.title}  
-                  onClick={() => handleRecipeClick(item)}
-                >
-                  <img src={item.img} alt="recipe image" />
-                  <h3>{item.title}</h3>
-                </div>
-              ))}
+            {filteredRecipes.map((item, index) => ( 
+            <div
+              className={`recipe ${selectedRecipeIndex === index ? 'selected' : ''}`}
+              key={item.title}
+              onClick={() => handleRecipeClick(item, index)} 
+            >
+              <img src={item.img} alt="recipe image" />
+              <h3>{item.title}</h3>
+            </div>
+          ))}
             </div>
             <div className='arrows'>
               <img src={left} className='left' onClick={handleScrollLeft} alt="left" />
