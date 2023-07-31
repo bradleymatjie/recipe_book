@@ -5,7 +5,6 @@
     align-items: center;
     gap: 20px;
     padding: 100px 0;
-    // position: relative;
     height: 100vh;
 
     @media (min-width: 800px) {
@@ -94,7 +93,7 @@
     align-items: center;
 
     @media (min-width: 800px) {
-        display: flex;
+        flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 0 100px 0 20px;
@@ -105,9 +104,12 @@
         text-align: center;
 
         
-    @media (min-width: 800px) {
+        @media (min-width: 800px) {
             font-size: 3em;
+            text-align: left;
             margin-bottom: 0;
+            
+            padding-left: 120px;
         }
     }
 
@@ -116,6 +118,24 @@
         width: 65%;
         margin: 0 auto;
         text-align: center;
+
+        @media (min-width: 800px) {
+            font-size: 1.1em;
+            width: 100%;
+            padding-left: 80px;
+        }
+    }
+
+    & button {
+        background-color: rgb(39, 94, 56);
+
+        @media (min-width: 800px) {
+            margin-right: 40px;
+        }
+
+        & a {
+            color: #c8ead1;
+        }
     }
 }
 
