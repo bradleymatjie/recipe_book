@@ -10,6 +10,7 @@ import sectionImage from '../../assets/pexels-ella-olsson-1640774.jpg';
 
 
 
+
 export const Hero = () => {
   return (
     <>
@@ -23,8 +24,10 @@ export const Hero = () => {
             <img src={heroPlate} alt="Hero Plate" />
         </div>
     </section>
-    <section className="categories container">
+    <section className="categories-container">
       <h2>Categories</h2>
+      <p>Take a glimpse at the variety of recipes we have for you</p>
+      <a href="#!">View All</a>
       <div className="row">
 
         <div className="food-item">
@@ -62,12 +65,39 @@ export const Hero = () => {
       </div>
 
     </section>
-
+      
     <section>
       <div className="section-image">
         <img src={sectionImage} alt="meal"/>
       </div>
     </section>
+    <footer>
+      <div className="footer-container">
+        <div className="links">
+          <h3>Links</h3>
+        <ul>
+          <li>Home</li>
+          <li>Recipes</li>
+          <li>Contact Us</li>  
+        </ul>  
+        </div>
+        <div className="links">
+          <h3>Social</h3>
+        <ul>
+          <li>Instagram</li>
+          <li>Facebook</li>
+          <li>Pintrest</li>  
+        </ul>  
+        </div>
+        <div className="form">
+          <h3>Newsletter</h3>
+          <div className="input-box">
+          <input type="text" name="email" placeholder="Type in Email"></input>
+          <button type="submit">Subscribe</button>
+          </div>
+          </div>
+      </div>
+    </footer>
 
     </>
   )
