@@ -24,6 +24,7 @@ export const Hero = () => {
             <img src={heroPlate} alt="Hero Plate" />
         </div>
     </section>
+    
     <section className="categories-container">
       <h2>Categories</h2>
       <p>Take a glimpse at the variety of recipes we have for you</p>
