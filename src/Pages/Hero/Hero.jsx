@@ -5,10 +5,9 @@ import Meaty from '../../assets/meaty.jpg';
 import Pastry from '../../assets/pastry.jpg';
 import Seafood from '../../assets/seafood.jpg';
 import Vegan from '../../assets/vegan.jpg';
+import Cocktail from '../../assets/Cocktails.jpg';
 import sectionImage from '../../assets/pexels-ella-olsson-1640774.jpg';
-
-
-
+import { NavLink } from 'react-router-dom';
 
 export const Hero = () => {
   return (
@@ -16,8 +15,8 @@ export const Hero = () => {
     <section className='hero'>
         <div className='hero-texts'>
             <h1>The Easiest way to make your favourite meal</h1>
-            <p>Discover 150+ recipes in your hand with the best recipe. Help you find the asiest way to cook</p>
-            <button>Explore Recipes</button>
+            <p>Discover 150+ recipes in your hand with the best recipe. Help you find the easiest way to cook</p>
+            <button><NavLink to='/recipe_book/recipes'>Explore Recipes</NavLink></button>
         </div>
         <div className='hero-image'>
             <img src={heroPlate} alt="Hero Plate" />
@@ -57,6 +56,11 @@ export const Hero = () => {
         <div className="card">
           <img src={Dessert} alt="" />
           <h3>Dessert</h3>
+        </div>
+
+        <div className="card">
+          <img src={Cocktail} alt="" />
+          <h3>Cocktails</h3>
         </div>
       </div>
     </section>
