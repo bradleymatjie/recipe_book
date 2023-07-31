@@ -1,71 +1,150 @@
 import './Recipes.scss';
-
+import { useRef, useState } from 'react'; 
 import { recipesList } from '../../recipeslist';
 import meaty from '../../assets/meaty.jpg';
 import left from '../../assets/left.png';
 import right from '../../assets/right.png';
 
 export const Recipes = () => {
+  const [selectedCategory, setSelectedCategory] = useState('All'); 
+    const containerRef = useRef(null);
+    const [selectedRecipe, setSelectedRecipe] = useState(null);
+
+    
+    const handleScrollRight = () => {
+     
+      const scrollDistance = 300;
+  
+ 
+      const container = containerRef.current;
+  
+      
+      const currentScroll = container.scrollLeft;
+  
+     
+      const targetScroll = currentScroll + scrollDistance;
+  
+      
+      container.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth',
+      });
+    };
+
+    const handleScrollLeft = () => {
+      // Define the scroll distance here (e.g., 300px)
+      const scrollDistance = 300;
+  
+      // Get the container element that you want to scroll using the ref
+      const container = containerRef.current;
+  
+      // Calculate the current scroll position
+      const currentScroll = container.scrollLeft;
+  
+      // Calculate the target scroll position (scroll to the left)
+      const targetScroll = currentScroll - scrollDistance;
+  
+      // Perform the smooth scroll animation
+      container.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth',
+      });
+    };
+
+    
+  const handleCategoryFilter = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const handleRecipeClick = (recipe) => {
+    setSelectedRecipe(recipe);
+  };
+
+  
+  const filteredRecipes = selectedCategory === 'All'
+    ? recipesList
+    : recipesList.filter(item => item.category === selectedCategory);
+
+
   return (
     <section className='recipes'>
         <div className="categories">
-            <ul>
-                <li>Meaty</li>
-                <li>Vegetarian</li>
-                <li>Salads</li>
-                <li>Desserts</li>
-                <li>CockTails</li>
-            </ul>
+        <ul>
+          <li
+            className={selectedCategory === 'All' ? 'active' : ''}
+            onClick={() => handleCategoryFilter('All')}
+          >
+            All
+          </li>
+          <li
+            className={selectedCategory === 'meaty' ? 'active' : ''}
+            onClick={() => handleCategoryFilter('meaty')}
+          >
+            Meaty
+          </li>
+          <li
+            className={selectedCategory === 'Vegetarian' ? 'active' : ''}
+            onClick={() => handleCategoryFilter('Vegetarian')}
+          >
+            Vegetarian
+          </li>
+          <li
+            className={selectedCategory === 'salads' ? 'active' : ''}
+            onClick={() => handleCategoryFilter('salads')}
+          >
+            Salads
+          </li>
+          <li
+            className={selectedCategory === 'desserts' ? 'active' : ''}
+            onClick={() => handleCategoryFilter('desserts')}
+          >
+            Desserts
+          </li>
+          <li
+            className={selectedCategory === 'cocktails' ? 'active' : ''}
+            onClick={() => handleCategoryFilter('cocktails')}
+          >
+            CockTails
+          </li>
+        </ul>
         </div>
 
         <div className="recipe-container">
+        {selectedRecipe ? ( 
           <div className='texts'>
-            <h1>Arigular Salad</h1>
-            <p>Category: Salads</p>
-        
-            <p className='desc'>
-              This dish shouts comfort food, 
-              but it's also impressive enough to 
-              serve to dinner guests. Be sure to 
-              have a crusty baguette on hand, 
-              because the sauce is just wonderful. 
-              (Not into bread? You can also serve it 
-              alongside rice or pasta.)
-            </p>
+            <h1>{selectedRecipe.title}</h1>
+            <p>Category: {selectedRecipe.category}</p>
+            <p className='desc'>{selectedRecipe.description}</p>
             <button>ADD TO COOKBOOK</button>
           </div>
+        ) : (
+          <p>Select a recipe from the list</p>
+        )}
+        {selectedRecipe && (
           <div className='image'>
-                <img src={meaty} alt="" />
-                <p className='ingredients'>
-                  1 tbsp. extra-virgin olive oil
-                  4 boneless skinless chicken breasts
-                  Kosher salt
-                  Freshly ground black pepper
-                  1 tsp. dried oregano
-                  3 tbsp. butter
-                  3 cloves garlic, minced
-                  1 1/2 c. cherry tomatoes, halved
-                  3 c. baby spinach
-                  1/2 c. heavy cream
-                  1/4 c. freshly grated Parmesan
-                  Lemon wedges, for serving
-                </p>
-                <p></p>
+            <img src={selectedRecipe.img} alt="" />
+            <p className='ingredients'>{selectedRecipe.ingredients}</p>
+            <p></p>
           </div>
+        )}
         </div>
 
         <div className="recipesList">
-            <div className='recipesList-container'>
-              {recipesList.map(item => (
-                <div className='recipe'>
+            <div className='recipesList-container' ref={containerRef}>
+              {filteredRecipes.map(item => (
+                <div 
+                  className='recipe' 
+                  key={item.title}  
+                  onClick={() => handleRecipeClick(item)}
+                >
                   <img src={item.img} alt="recipe image" />
                   <h3>{item.title}</h3>
                 </div>
               ))}
             </div>
             <div className='arrows'>
-              <img src={left} className='left' alt="left" />
-              <img src={right} className='right' alt="right" />
+              <img src={left} className='left' onClick={handleScrollLeft} alt="left" />
+              <img src={right} className='right' onClick={handleScrollRight} alt="right" />
             </div>
         </div>
     </section>

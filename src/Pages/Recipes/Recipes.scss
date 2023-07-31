@@ -27,6 +27,11 @@
     transition: .5s all;
 }
 
+.categories ul li.active {
+    background-color: darkgreen;
+    color: aliceblue;
+}
+
 
 .categories ul li:hover {
     background-color: darkcyan;
