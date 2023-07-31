@@ -5,13 +5,154 @@
     top: 10%;
     height: 90vh;
     background-color: aliceblue;
+    padding: 0 100px;
 }
 
-.recipes > div ul {
+.categories ul {
     list-style: none;
+    display: flex;
+    gap: 20px;
+    width: 45%;
 }
 
-.recipes > div ul li {
+.categories ul li {
     padding-left: 0;
-    text-orientation: sideways-right;
+    border: 1px solid lightgreen;
+    padding: 5px 20px;
+    border-radius: 20px;
+    position: relative;
+    top: 50px;
+    right: 50px;
+    cursor: pointer;
+    transition: .5s all;
+}
+
+
+.categories ul li:hover {
+    background-color: darkcyan;
+    padding: 5px 20px;
+    color: aliceblue;
+    border-radius: 30px;
+}
+
+.recipe-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 65%;
+
+    & .texts h1 {
+        margin-bottom: 0;
+        font-size: 4em;
+    }
+
+    & .texts > p {
+        font-size: .9em;
+        max-width: 60%;
+    }
+
+    & button {
+        border: none;
+        font-size: .8em;
+        width: 200px;
+        height: 40px;
+        background-color: rgb(127, 184, 171);
+        color: aliceblue;
+    }
+}
+
+.recipe-container .image {
+    border-radius: 20px;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    box-shadow: 1px 1px 20px 1px;
+
+    &:hover {
+        & .ingredients {
+            opacity: 1;
+        }
+    }
+    
+    & img {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+
+    & .ingredients {
+        position: absolute;
+        opacity: 0;
+        bottom: -50px;
+        right: -80px;
+        width: 40%;
+        height: 70%;
+        z-index: 10;
+        background-color: aliceblue;
+        box-shadow: 1px 1px 20px 1px;
+        padding: 10px;
+        border-radius: 0 20px 20px 20px;
+        transition: 1s all;
+    }
+}
+
+
+.recipesList {
+    display: flex;
+    gap: 50px;
+    align-items: center;
+
+    & .arrows {
+        display: flex;
+        height: 100px;
+        align-items: center;
+        gap: 20px;
+
+        & img {
+            width: 70px;
+            height: 70px;
+            border: 1px solid lightgreen;
+            border-radius: 50%;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 1px 1px 5px 1px lightgreen;
+            }
+        }
+    }
+}
+
+.recipesList-container {
+    height: 150px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-left: 10px;
+    overflow-x: hidden;
+    position: relative;
+    width: 80%;
+
+    & .recipe {
+        height: 80%;
+        width: 300px;
+        border: 1px solid lightgreen;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 5px;
+        border-radius: 20px;
+        transition: .5s all;
+
+        &:hover {
+            background-color: darkgreen;
+            color: aliceblue;
+        }
+
+        & img {
+            width: 150px;
+            height: 100%;
+            border-radius: 50%;
+        }
+    }
 }
