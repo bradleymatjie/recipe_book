@@ -1,0 +1,17 @@
+.recipes {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 10%;
+    height: 90vh;
+    background-color: aliceblue;
+}
+
+.recipes > div ul {
+    list-style: none;
+}
+
+.recipes > div ul li {
+    padding-left: 0;
+    text-orientation: sideways-right;
+}
