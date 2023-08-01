@@ -31,6 +31,7 @@ import salards5 from './assets/recipes/salads5.jpg';
 
 export const recipesList = [
     {
+        id: 1,
         category: 'meaty',
         title: 'Creamy Tuscan Chicken',
         img: meaty1,
@@ -54,6 +55,7 @@ export const recipesList = [
             Lemon wedges, for serving`
     },
     {
+        id: 2,
         category: 'meaty',
         title: 'Honey-Garlic Glazed Salmon',
         img: meaty2,
@@ -72,6 +74,7 @@ export const recipesList = [
             1 lemon, sliced into rounds`
     },
     {
+        id: 3,
         category: 'meaty',
         title: 'Peach Balsamic Grilled Chicken',
         img: meaty3,
@@ -93,6 +96,7 @@ export const recipesList = [
         Chopped fresh basil, for serving`
     },
     {
+        id: 4,
         category: 'meaty',
         title: 'Air Fryer Pork Chops',
         img: meaty4,
@@ -111,6 +115,7 @@ export const recipesList = [
         1/2 tsp. freshly ground black pepper `
     },
     {
+        id: 5,
         category: 'meaty',
         title: 'Bánh Mì Kebabs',
         img: meaty5,
@@ -131,6 +136,7 @@ export const recipesList = [
         Freshly ground black pepper`
     },
     {
+        id: 6,
         category: 'Vegetarian',
         title: 'One-Pot Vegetarian Chili Mac',
         img: vegan1,
@@ -165,6 +171,7 @@ export const recipesList = [
         `
     },
     {
+        id: 7,
         category: 'Vegetarian',
         title: 'Brie Spaghetti',
         img: vegan2,
@@ -182,6 +189,7 @@ export const recipesList = [
         1/4 c. grated Parmesan, for serving`
     },
     {
+        id: 8,
         category: 'Vegetarian',
         title: 'Vegetarian Italian Sub',
         img: vegan3,
@@ -200,6 +208,7 @@ export const recipesList = [
         1 tbsp. red wine vinegar`
     },
     {
+        id: 9,
         category: 'Vegetarian',
         title: 'Mushroom Piccata Pasta',
         img: vegan4,
@@ -221,6 +230,7 @@ export const recipesList = [
         Juice of 1 lemon`
     },
     {
+        id: 10,
         category: 'Vegetarian',
         title: 'Saag Paneer',
         img: vegan5,
@@ -239,6 +249,7 @@ export const recipesList = [
         1/2 tsp. cayenne (¼ tsp. for less heat)`
     },
     {
+        id: 11,
         category: 'cocktails',
         title: 'Whiskey Ginger',
         img: cocktail1,
@@ -261,6 +272,7 @@ export const recipesList = [
         Toothpick `
     },
     {
+        id: 12,
         category: 'cocktails',
         title: 'Last Word Cocktail',
         img: cocktail2,
@@ -279,6 +291,7 @@ export const recipesList = [
         Luxardo cherries and a lime wedge or wheel, for serving`
     },
     {
+        id: 13,
         category: 'cocktails',
         title: 'Lemon-Poppy Seed Drop',
         img: cocktail3,
@@ -297,6 +310,7 @@ export const recipesList = [
         Ice`
     },
     {
+        id: 14,
         category: 'cocktails',
         title: 'Brown Sugar Old Fashioned',
         img: cocktail4,
@@ -312,6 +326,7 @@ export const recipesList = [
         Cinnamon stick, for garnish`
     },
     {
+        id: 15,
         category: 'cocktails',
         title: 'Classic Manhattan',
         img: cocktail5,
@@ -327,6 +342,7 @@ export const recipesList = [
         Bitters `
     },
     {
+        id: 16,
         category: 'desserts',
         title: 'Snickerdoodle Blondies',
         img: dessert1,
@@ -347,6 +363,7 @@ export const recipesList = [
         2 tbsp. cinnamon sugar`
     },
     {
+        id: 17,
         category: 'desserts',
         title: 'Strawberry Crunch Poke Cake',
         img: dessert2,
@@ -370,6 +387,7 @@ export const recipesList = [
         Fresh strawberries, halved lengthwise, for serving`
     },
     {
+        id: 18,
         category: 'desserts',
         title: 'Homemade Creamsicles',
         img: dessert3,
@@ -395,6 +413,7 @@ export const recipesList = [
         10 (3-oz.) ice-pop molds`
     },
     {
+        id: 19,
         category: 'desserts',
         title: 'Flourless Chocolate Coconut Cake',
         img: dessert4,
@@ -415,6 +434,7 @@ export const recipesList = [
         1 c. crème fraîche`
     },
     {
+        id: 20,
         category: 'desserts',
         title: 'Espresso Cookies',
         img: dessert5,
@@ -438,6 +458,7 @@ export const recipesList = [
         Flaky sea salt, for garnish  `
     },
     {
+        id: 21,
         category: 'salads',
         title: 'Cucumber Salad',
         img: salards1,
@@ -460,6 +481,7 @@ export const recipesList = [
         1/4 c. thinly sliced chives`
     },
     {
+        id: 22,
         category: 'salads',
         title: 'BBQ Chicken Salad',
         img: salards2,
@@ -493,6 +515,7 @@ export const recipesList = [
         1/4 c. finely chopped red onion`
     },
     {
+        id: 23,
         category: 'salads',
         title: 'Greek Orzo Salad',
         img: salards3,
@@ -518,6 +541,7 @@ export const recipesList = [
         1 c. crumbled feta (about 1/4 lb.)`
     },
     {
+        id: 24,
         category: 'salads',
         title: 'Best Chicken Salad',
         img: salards4,
@@ -543,6 +567,7 @@ export const recipesList = [
         3/4 tsp. freshly ground black pepper`
     },
     {
+        id: 25,
         category: 'salads',
         title: 'Classic Potato Salad',
         img: salards5,

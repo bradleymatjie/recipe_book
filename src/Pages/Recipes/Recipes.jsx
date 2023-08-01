@@ -1,15 +1,17 @@
 import './Recipes.scss';
-import { useRef, useState } from 'react'; 
+import { useRef, useState } from 'react';
+import { useNavigate, Route, Outlet } from 'react-router-dom';
 import { recipesList } from '../../recipeslist';
 import meaty from '../../assets/meaty.jpg';
 import left from '../../assets/left.png';
 import right from '../../assets/right.png';
+import RecipeDetails from '../RecipeDetails/RecipeDetails';
 
 export const Recipes = () => {
   const [selectedCategory, setSelectedCategory] = useState('All'); 
     const containerRef = useRef(null);
     const [selectedRecipe, setSelectedRecipe] = useState(null);
-
+    const navigate = useNavigate();
     
     const handleScrollRight = () => {
      
@@ -58,6 +60,7 @@ export const Recipes = () => {
 
   const handleRecipeClick = (recipe) => {
     setSelectedRecipe(recipe);
+    navigate(`/recipe_book/recipes/${recipe.id}`);
   };
 
   
@@ -109,32 +112,14 @@ export const Recipes = () => {
         </ul>
         </div>
 
-        <div className="recipe-container">
-        {selectedRecipe ? ( 
-          <div className='texts'>
-            <h1>{selectedRecipe.title}</h1>
-            <p>Category: {selectedRecipe.category}</p>
-            <p className='desc'>{selectedRecipe.description}</p>
-            <button>ADD TO COOKBOOK</button>
-          </div>
-        ) : (
-          <p>Select a recipe from the list</p>
-        )}
-        {selectedRecipe && (
-          <div className='image'>
-            <img src={selectedRecipe.img} alt="" />
-            <p className='ingredients'>{selectedRecipe.ingredients}</p>
-            <p></p>
-          </div>
-        )}
-        </div>
+         {selectedRecipe ? <Outlet />: <p className='customText'>Select A recipe Below</p>}
 
-        <div className="recipesList">
+        <div className={`recipesList ${selectedRecipe ? 'recipeActive': ''}`}>
             <div className='recipesList-container' ref={containerRef}>
             {filteredRecipes.map((item) => (
             <div
-              className={`recipe ${selectedRecipe && selectedRecipe.title === item.title ? 'selected' : ''}`}
-              key={item.title}
+              className={`recipe ${selectedRecipe && selectedRecipe.id === item.id ? 'selected' : ''}`}
+              key={item.id}
               onClick={() => handleRecipeClick(item)}
             >
               <img src={item.img} alt="recipe image" />
