@@ -9,8 +9,6 @@ export const Recipes = () => {
   const [selectedCategory, setSelectedCategory] = useState('All'); 
     const containerRef = useRef(null);
     const [selectedRecipe, setSelectedRecipe] = useState(null);
-    const [selectedRecipeIndex, setSelectedRecipeIndex] = useState(null); 
-
 
     
     const handleScrollRight = () => {
@@ -58,9 +56,8 @@ export const Recipes = () => {
     setSelectedCategory(category);
   };
 
-  const handleRecipeClick = (recipe, index) => {
+  const handleRecipeClick = (recipe) => {
     setSelectedRecipe(recipe);
-    setSelectedRecipeIndex(index); 
   };
 
   
@@ -134,11 +131,11 @@ export const Recipes = () => {
 
         <div className="recipesList">
             <div className='recipesList-container' ref={containerRef}>
-            {filteredRecipes.map((item, index) => ( 
+            {filteredRecipes.map((item) => (
             <div
-              className={`recipe ${selectedRecipeIndex === index ? 'selected' : ''}`}
+              className={`recipe ${selectedRecipe && selectedRecipe.title === item.title ? 'selected' : ''}`}
               key={item.title}
-              onClick={() => handleRecipeClick(item, index)} 
+              onClick={() => handleRecipeClick(item)}
             >
               <img src={item.img} alt="recipe image" />
               <h3>{item.title}</h3>
