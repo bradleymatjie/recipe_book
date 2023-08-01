@@ -13,7 +13,6 @@ export const Header = ({ menuTogglerFunction, menuTogglerValue }) => {
         <li><NavLink to="/recipe_book/">Home</NavLink></li>
         <li><NavLink to="/recipe_book/recipes">Recipes</NavLink></li>
         <li><NavLink to="/recipe_book/about">About</NavLink></li>
-        <li><NavLink to="/recipe_book/contact">ContactUs</NavLink></li>
       </ul>
     </nav>
 
