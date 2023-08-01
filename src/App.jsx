@@ -6,6 +6,7 @@ import { Hero } from './Pages/Hero/Hero';
 
 import { Routes, Route } from 'react-router-dom';
 import { Recipes } from './Pages/Recipes/Recipes';
+import { About } from './Pages/About/About';
 
 function App() {
   const [menuToggler, setMenuToggler] = useState(false);
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path='/recipe_book/' element={<Hero />} />
         <Route path='/recipe_book/recipes' element={<Recipes />} />
+        <Route path='/recipe_book/about' element = {<About />} />
         
       </Routes>
       {menuToggler && <MobileMenu />}
